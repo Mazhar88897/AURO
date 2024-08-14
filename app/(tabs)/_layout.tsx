@@ -1,15 +1,20 @@
-import { Tabs } from 'expo-router';
+import { Slot, Tabs } from 'expo-router';
 import React from 'react';
-
+// Text
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { FlatList, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-
+  
   return (
-    <Tabs
+    <>
+    <SafeAreaView>
+    <Text>hello</Text>
+    {/* <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
@@ -32,6 +37,11 @@ export default function TabLayout() {
           ),
         }}
       />
-    </Tabs>
-  );
+    </Tabs> */}
+    <Slot />
+    {/* <View */}
+   
+    <Text>footer</Text>
+    </SafeAreaView>
+    </> );
 }
